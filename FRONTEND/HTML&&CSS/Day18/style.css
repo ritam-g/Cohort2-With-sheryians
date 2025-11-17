@@ -1,0 +1,180 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Times New Roman', Times, serif;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    
+}
+#main{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgb(254, 254, 254),rgb(0, 0, 0));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-areas: "top top"
+                         "left right"
+                         "bottom bottom"    
+    ;
+    grid-gap: 10px;
+    
+
+}
+
+.nav{
+    grid-area: top;
+    background-color: gray;
+    transition: all ease 1s;
+    
+}
+.left{
+    grid-area: left;
+    background-color: blueviolet;
+    transition: all ease 1s;
+}
+.right{
+    grid-area: right;
+    background-color: bisque;
+    transition: all ease 1s;
+}
+.bottom{
+    grid-area: bottom;
+    background-color: chocolate;
+    transition: all ease 1s;
+}
+.nav:hover{
+    background-image: url(https://images.unsplash.com/photo-1759800805756-e7b392059a58?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyOHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center;
+    background-size: cover;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+.left:hover{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqBTpWQqCt6KUXxqgzWSt7ubw-J8AgDZO6jA&s);
+    background-position: center;
+    background-size: cover;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    
+}
+.right:hover{
+    background-image: url(https://media.tenor.com/cmGCMoAyI_cAAAAM/solo-leveling-solo-leveling-season-2.gif);
+    background-position: center;
+    background-size: cover;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: transparent;
+}
+.bottom:hover{
+    background-image: url(https://static0.cbrimages.com/wordpress/wp-content/uploads/2024/11/bd70b5c1-af0f-40da-9df5-75a24af0e546.jpeg?q=49&fit=contain&w=750&h=422&dpr=2);
+    background-position: center;
+    background-size: cover;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: transparent;
+}
+/* FIRST MAIN SECTION DONE */
+#main2{
+    
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(whitesmoke,black);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "left2 top2 top2"
+                         "left2 center center-right"
+                         "bottom-left bottom-left bottom-right"       
+    ;
+    background-image: url(https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyYm5uMXY0aG1tcGg5amdsZW0wbmJtd3hoaGV0cWN4YzlibmtwcHJpZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/CY3A9zOlZR8uhFbeok/giphy.gif);
+    background-position: center;
+    background-size: cover;
+    gap: 10px;
+    padding: 5px 5px;
+}
+
+.left2{
+    grid-area: left2;
+    background-color: #f0f8ff;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOvv12Tft9nkOBQMysl-bPFmpTK-cfXchrKQ&s);
+    background-position: center;
+    background-size: cover;
+    transition: all ease 1s;
+}
+.left2:hover{
+    transform: rotateY(25deg);
+    box-shadow: 2px 3px 4px black;
+}
+.top2{
+    grid-area: top2;
+    background-color: antiquewhite;
+    background-image: url(https://i.pinimg.com/originals/89/b9/98/89b9986938a3c1c97c2d3f97b6295961.gif);
+    background-position: center;
+    background-size: cover;
+    transition: all ease 1s;
+}
+.top2:hover{
+    transform: rotateX(25deg);
+    box-shadow: 2px 3px 4px black;
+}
+.center{
+    grid-area: center;
+    background-color: aquamarine;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYL3IfJ4-RlgctVy9LObrhaS1SvzSgmE9NDw&s);
+    background-position: center;
+    background-size: cover;
+    transition: all ease 1s;
+}
+.center:hover{
+    transform: rotateX(180deg);
+    box-shadow: 2px 3px 4px black;
+}
+.center-right{
+    grid-area: center-right;
+    background-color: bisque;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Z9Qe7ohqyFtkEeVLPQ22RWcHjDlzWiA-lw&s);
+    background-position: center;
+    background-size: cover;
+    transition: all ease 1s;
+}
+.center-right:hover{
+    transform: rotateY(180deg);
+    box-shadow: 2px 3px 4px black;
+}
+.bottom-left{
+    grid-area: bottom-left;
+    background-color: aqua;
+    background-image: url(https://i.redd.it/g6ipojiyqzab1.gif);
+    background-position: center;
+    background-size: cover;
+    transition: all ease 1s;
+}
+.bottom-left:hover{
+    transform: scale(1.2);
+}
+.bottom-right{
+    grid-area: bottom-right;
+    background-color: blueviolet;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIjXaf_Z613w4Vp_MBMYJDNSQXfFsFCnoa1w&s);
+    background-position: center;
+    background-size: cover;
+    transition: all ease 1s;
+}
+.bottom-right:hover{
+    transform: scale(1.2);
+}

@@ -1,0 +1,8 @@
+@mixin h-Back-reflect-On-Text($url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx9A9JysQonTcZsjj7MUWC1zbN2u_JzXouiw&s"){
+    background-image: url($url);
+    background-position: center;
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+}

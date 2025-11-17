@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+    
+}
+#main{
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(to right, red , yellow,blue);
+    position: relative;
+    
+    
+}
+#small{
+    position: absolute;
+    top: 50%;
+    
+    height: 50%;
+    width: 50%;
+    background: linear-gradient(to right, yellow , red,white);
+}
+#main2{
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(to right, red , yellow,blue);
+    position: absolute;
+    right: 0%;
+}
+#fixed{
+    position: fixed;
+    top: 50%;
+    right: 0%;
+    height: 200px;
+    width: 50px;
+    background:linear-gradient(to right, rgb(0, 255, 51) , rgb(24, 206, 164),white);
+    
+}
+#container{
+    height: 3000px;
+    width: 100%;
+}
+:hover #fixed{
+    background: linear-gradient(to right, rgb(255, 0, 255) , rgb(24, 206, 164),white);
+}
