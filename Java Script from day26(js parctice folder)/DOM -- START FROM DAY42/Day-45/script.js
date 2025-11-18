@@ -30,6 +30,7 @@ setTimeout(() => {
     btn.style.opacity=0.7
     console.log("stop");
     
+    
 }, 5000);
 
 })
