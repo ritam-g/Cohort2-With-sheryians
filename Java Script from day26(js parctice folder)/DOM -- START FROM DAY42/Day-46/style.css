@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(black, gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+main i {
+  position: absolute;
+  background: linear-gradient(rgb(224, 132, 148), pink);
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  transition: all ease 0.3s;
+  transform: scale(0);
+  top: 50%;
+}
+main .card {
+  height: 60vh;
+  width: 25vw;
+  background-color: gray;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main .card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem 1rem;
+}/*# sourceMappingURL=style.css.map */
