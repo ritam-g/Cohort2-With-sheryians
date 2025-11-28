@@ -9,14 +9,19 @@ html, body {
   height: 100%;
 }
 
+body {
+  background-image: url(https://giffiles.alphacoders.com/222/222341.gif);
+  background-position: center;
+  background-size: cover;
+}
+
 :root {
-  --col1:rgba(255, 252, 252, 0);
-  --col2:rgb(9, 9, 9);
+  --x:200px;
+  --y:200px;
 }
 
 main {
   height: 100%;
   width: 100%;
-  background: radial-gradient(var(--col1), var(--col2));
-  border: 1px solid black;
+  background: radial-gradient(250px at var(--x) var(--y), rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.947));
 }/*# sourceMappingURL=style.css.map */
