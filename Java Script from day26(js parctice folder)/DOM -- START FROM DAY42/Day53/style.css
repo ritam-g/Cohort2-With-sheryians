@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  background: linear-gradient(135deg, #ffffff 0%, #c3daf8 50%, #4f79ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+main h1, main h2, main h3, main h4, main h5, main h6 {
+  font-weight: 900;
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
+  color: #0a2a66;
+  letter-spacing: 1px;
+  transition: transform 0.25s ease, text-shadow 0.25s ease, opacity 0.4s ease;
+  opacity: 0.9;
+}
+main h1:hover, main h2:hover, main h3:hover, main h4:hover, main h5:hover, main h6:hover {
+  transform: scale(1.04);
+  opacity: 1;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  cursor: default;
+}
+main h1 {
+  font-size: 4rem;
+}
+main h2 {
+  font-size: 3rem;
+}
+main h3 {
+  font-size: 2.3rem;
+}
+main h4 {
+  font-size: 1.6rem;
+}
+main h5 {
+  font-size: 1rem;
+}
+main h6 {
+  font-size: 0.8rem;
+}/*# sourceMappingURL=style.css.map */
