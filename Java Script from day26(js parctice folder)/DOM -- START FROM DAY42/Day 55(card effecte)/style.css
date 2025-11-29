@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: black;
+}
+
+@property --deg {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes rote {
+  from {
+    --deg:0deg;
+  }
+  to {
+    --deg:360deg;
+  }
+}
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .card {
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.9rem;
+  padding: 0.6rem 0.6rem;
+  border-radius: 1rem;
+  background: linear-gradient(rgb(0, 0, 0)) padding-box, conic-gradient(from var(--deg), black, red, black) border-box;
+  border: 0.5rem solid rgba(255, 255, 255, 0);
+  animation: rote 5s infinite;
+}
+main .card img {
+  width: 100%;
+  border-radius: 2rem;
+}
+main .card h1, main .card p {
+  color: white;
+  padding-bottom: 1rem;
+}/*# sourceMappingURL=style.css.map */

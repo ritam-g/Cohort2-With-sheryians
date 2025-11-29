@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+@mixin flexdis{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body{
+
+   background-color: black;
+}
+@property --deg{
+syntax: "<angle>";
+initial-value: 0deg;
+inherits: false;
+}
+
+@keyframes rote {
+    from{
+        --deg:0deg;
+    }
+    to{
+        --deg:360deg;
+    }
+}
+main{
+    height: 100vh;
+    width: 100vw;
+    @include flexdis();
+    
+    .card{
+        width: 25vw;
+        @include flexdis();
+        flex-direction: column;
+        align-items: start;
+        gap: 0.9rem;
+        padding: 0.6rem 0.6rem;
+        // box-shadow: 0px 0px 2.0rem red;
+        border-radius: 1rem;
+        background:linear-gradient(rgb(0, 0, 0)) padding-box,
+         conic-gradient(from var(--deg),black,red,black) border-box;
+        border: 0.5rem solid rgba(255, 255, 255, 0);
+        animation: rote 5s infinite;
+        img{
+            width: 100%;
+            border-radius: 2rem;
+            
+        }
+        h1,p{
+            color: white;
+            padding-bottom: 1rem;
+        }
+    }
+}
