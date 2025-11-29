@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  anchor-name: --select-target;
+}
+main .box {
+  height: 10vw;
+  width: 10vw;
+  background: linear-gradient(black, green);
+}
+main .box:hover {
+  anchor-name: --select-target;
+  cursor: pointer;
+}
+main .box1 {
+  height: 10vw;
+  width: 25vw;
+  background: linear-gradient(black, rgba(0, 128, 0, 0));
+}
+main .box2 {
+  height: 10vw;
+  width: 25vw;
+  background: linear-gradient(rgb(167, 122, 38), rgba(0, 128, 0, 0.101));
+}
+main .box3 {
+  height: 10vw;
+  width: 25vw;
+  background: linear-gradient(rgb(126, 9, 209), rgb(175, 204, 175));
+}
+main .pointer {
+  position: absolute;
+  position-anchor: --select-target;
+  top: anchor(top);
+  right: anchor(right);
+  left: anchor(left);
+  bottom: anchor(bottom);
+  background: linear-gradient(rgba(0, 0, 255, 0.75), rgba(255, 255, 255, 0.484));
+  transition: all 0.3s ease;
+  pointer-events: none;
+}/*# sourceMappingURL=style.css.map */
