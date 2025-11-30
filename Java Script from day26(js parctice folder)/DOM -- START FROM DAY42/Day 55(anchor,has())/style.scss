@@ -8,39 +8,46 @@ html, body {
   width: 100%;
   height: 100%;
 }
+@mixin flex(){
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
 main{
     height: 100vh;
     width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   @include flex();
     background-color:black;
     anchor-name: --select-target;
     .box{
-        height: 10vw;
-        width: 10vw;
+        height: 4rem;
+        width: 10rem;
         background: linear-gradient(black,green);
+        border: 2px solid gray;
+        padding: 2rem 2rem;
+        @include flex();
+        font-size: 2rem;
         
     }
     .box:hover{       
     anchor-name: --select-target ;
     cursor: pointer;
     }
-    .box1{
-        height: 10vw;
-        width: 25vw;
-        background: linear-gradient(black,rgba(0, 128, 0, 0));
-    }
-    .box2{
-        height: 10vw;
-        width: 25vw;
-        background: linear-gradient(rgb(167, 122, 38),rgba(0, 128, 0, 0.101));
-    }
-    .box3{
-        height: 10vw;
-        width: 25vw;
-        background: linear-gradient(rgb(126, 9, 209),rgb(175, 204, 175));
-    }
+    // .box1{
+    //     height: 10vw;
+    //     width: 25vw;
+    //     background: linear-gradient(black,rgba(0, 128, 0, 0));
+    // }
+    // .box2{
+    //     height: 10vw;
+    //     width: 25vw;
+    //     background: linear-gradient(rgb(167, 122, 38),rgba(0, 128, 0, 0.101));
+    // }
+    // .box3{
+    //     height: 10vw;
+    //     width: 25vw;
+    //     background: linear-gradient(rgb(126, 9, 209),rgb(175, 204, 175));
+    // }
     .pointer{
         position: absolute;
         position-anchor: --select-target;
@@ -50,7 +57,7 @@ main{
         bottom: anchor(bottom);
         // height: 100px;
         // width: 100px;
-        background:linear-gradient(rgba(0, 0, 255, 0.75),rgba(255, 255, 255, 0.484)); 
+       background: radial-gradient(rgba(255, 255, 255, 0.275),black);
         transition: all 0.3s ease;  
         pointer-events: none;
     }
