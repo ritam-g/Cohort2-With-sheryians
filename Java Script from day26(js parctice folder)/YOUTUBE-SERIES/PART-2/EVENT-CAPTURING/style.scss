@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+@mixin flex(){
+    display: flex;
+     align-items: center;
+     justify-content: center;
+}
+main{
+    width: 100%;
+     height: 100%;
+     background-color: gray;
+     @include flex();
+     .box{
+     @include flex();
+     button{
+        padding: 2rem 2rem;
+        font-size: 2rem;
+        color: blue;
+        font-style: oblique;
+        border-radius: 5rem;
+     }
+     button:active{
+        scale: 0.9;
+     }
+     }
+}
