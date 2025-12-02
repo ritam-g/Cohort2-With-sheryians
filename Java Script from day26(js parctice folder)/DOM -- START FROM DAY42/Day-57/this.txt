@@ -1,0 +1,11 @@
+global → window
+
+function → window
+
+ES5 function inside object → object
+
+ES6 (arrow) inside object → window
+
+ES5 inside ES5 → window
+
+ES6 inside ES5 inside object → object
