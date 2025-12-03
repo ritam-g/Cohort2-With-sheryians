@@ -1,0 +1,114 @@
+🌈 Colorful Version of All Questions
+🔵 SECTION 1: Objects and OOPS Thinking (Foundation)
+🟣 1. Create a user object that:
+
+stores name and email
+
+has a login method which prints:
+👉 "User logged in"
+
+🟢 2. Imagine you have 5 users.
+
+First, think how you would manage them without using a class
+
+Then convert the same logic using a class
+
+Observe how the code becomes cleaner
+
+✍️ Write code for both approaches
+
+🟡 3. Create a Product object that:
+
+stores name and price
+
+has a method that returns the final price after discount
+
+🟠 4. Goal of Section 1:
+
+Understand why keeping data + behavior together makes code easier to manage.
+
+🔵 SECTION 2: Classes and Objects
+🟣 1. Create a Car class with:
+
+brand
+
+speed
+
+a drive() method that prints:
+👉 car brand + car speed
+
+🟢 2. Create two car objects from the same class
+
+Verify that their data is different
+
+🟡 3. Write in your own words:
+
+If classes did not exist, how would you write this logic?
+What problems might occur as the project grows?
+
+🔵 SECTION 3: Constructor and this keyword
+🟣 1. Create a Student class
+
+constructor accepts name and roll number
+
+add a method introduce() that prints both values
+
+🟢 2. Inside the constructor, set values using this
+
+Then remove this and see:
+
+what error occurs
+
+and why it happens
+
+🟡 3. Create an object with two methods:
+
+one using a normal function
+
+one using an arrow function
+
+Inside both, print this and observe the difference.
+
+🟠 Goal:
+
+Clearly understand how this works and when it changes.
+
+🔵 SECTION 4: Constructor Functions & Prototypes
+🟣 1. Create a User constructor function
+
+(❌ do NOT use class syntax)
+
+🟢 2. Add a login method in two ways:
+
+inside the constructor
+
+then move it to the prototype
+
+🟡 3. Create two User objects
+
+Compare their login methods using equality (===)
+Explain why result is true or false
+
+🟠 Purpose:
+
+Learn how prototypes help share methods efficiently.
+
+🔵 SECTION 5: call, apply, bind
+🟣 1. Create a function that prints this.name
+🟢 2. Create an object with a name property
+🟡 3. Use:
+
+call() to run the function using the object
+
+apply() to run the function using the object
+
+bind() to create a new function and call it later
+
+🟠 4. Borrow a method from one object
+
+Run it for another object using call()
+
+🔴 Goal:
+
+Understand how this can be manually controlled using
+👉 call / apply / bind
