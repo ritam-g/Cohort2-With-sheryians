@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.form-container {
+  width: 330px;
+  padding: 28px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.form-container h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  color: green;
+  transition: all 0.4s ease;
+}
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-container form label {
+  font-size: 14px;
+  font-weight: 600;
+}
+.form-container form input {
+  padding: 10px 12px;
+  border: 1px solid #d7dbe2;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.form-container form input:focus {
+  outline: none;
+  border-color: #4a60ff;
+  box-shadow: 0 0 0 3px rgba(74, 96, 255, 0.25);
+}
+.form-container form input:invalid {
+  border-color: #e05252;
+}
+.form-container form button {
+  margin-top: 10px;
+  padding: 12px;
+  background: #4a60ff;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.form-container form button:hover {
+  background: rgb(23, 51.1988950276, 255);
+}/*# sourceMappingURL=style.css.map */
