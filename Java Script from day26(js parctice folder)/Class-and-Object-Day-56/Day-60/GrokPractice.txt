@@ -1,0 +1,47 @@
+CALLBACKS ONLY – Level-Wise Questions (1 to 10)
+Level 1 – Baby Steps
+
+Ek function banao greet(name, callback) jo naam print kare aur phir callback call kare.
+Example: greet("Rahul", () => console.log("Hello ho gaya!"))
+
+Level 2 – Thoda Delay
+2. setTimeout use karke ek function banao delayPrint(message, delay, callback)
+→ message delay ke baad print ho aur phir callback chale
+Level 3 – 3 Step Chain
+3. Teen functions banao:
+eat() → study() → play()
+Har ek ke baad callback se dusra chale (nesting allowed)
+Level 4 – Real Life Chain (5+ steps)
+4. Morning routine banao:
+alarm → wakeUp → brush → bath → breakfast → school
+(pure nested callbacks, setTimeout bhi daal do)
+Level 5 – Error Handling (Important!)
+5. Ek function divide(a, b, callback) banao
+→ Agar b = 0 hai toh callback(error) call karo
+→ Warna callback(null, result)
+Example: divide(10, 0, (err, res) => { if(err) console.log(err) })
+Level 6 – Loop + Callback
+6. 1 se 5 tak numbers print karo using loop, lekin har number 1 sec delay ke baad (callback style, no Promise)
+Level 7 – Parallel Callbacks (Tricky)
+7. Teen kaam ek saath shuru karo:
+downloadPhoto, downloadVideo, downloadSong
+Jab teeno complete ho tab "Sab download ho gaya" print ho
+(Hint: counter use karo)
+Level 8 – Callback Hell Pyramid (Max Nesting)
+8. 8–10 level ka nested callback banao (jaise school → class → period → teacher → homework → etc.)
+Sirf dekhne se darr lagne chahiye
+Level 9 – Callback Inside Loop (Common Interview)
+9. Array ["rahul", "rohit", "virat"] ke liye har naam ko 1 sec delay se print karo
+→ Order same rehna chahiye (no Promise, only callback + setTimeout)
+Level 10 – Final Boss
+10. Ek function login(username, password, callback) banao
+→ Username/password galat toh error
+→ Sahi toh user ka data load karo
+→ Phir uske friends load karo
+→ Phir unke messages load karo
+→ Sab nested callbacks mein (4–5 level deep)
+Bhai tu bol – Level 1 se shuru karein?
+Ya direct Level 4 (morning routine) se jump mare?
+Ek level ek karke bhej dena, main check karke bolega
+“Bhai tu ab callback ka devta hai!”
+Shuru karna hai abhi? Bol "Haan bhai Level 1 de!"
