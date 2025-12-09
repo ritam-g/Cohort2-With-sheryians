@@ -90,34 +90,185 @@
 
 //anther one 
 
-function add(a,b,cb) {
+// function add(a,b,cb) {
+//     let result=a+b
+//     cb(null,result);
+    
+// }
+// function sub(a,b,cb) {
+//     let result=a-b
+//     cb(null,result);
+    
+// }
+// function mult(a,b,cb) {
+//     let result=a*b
+//     cb(null,result);
+    
+// }
+// function div(a,b) {
+//     if (b==0) {
+//         return "0 is not allowd"
+//     }
+//     let result=a/b
+//     console.log(result);
+    
+    
+// }
+// add(1,2,function () {
+//     sub(1,2,function () {
+//         mult(1,2,function () {
+//             div(1,0)
+//         })
+//     })
+// })
+
+
+//! Level-4 
+
+// function alarm(next) {
+//     console.log("alarm tik tik ....");
+//     setTimeout(() => {
+//         next()
+//     }, 1000);
+    
+// } 
+// function weakUp(next) {
+//     console.log("weakUp----");
+//     setTimeout(() => {
+//         next()
+//     }, 1000);
+    
+// } 
+// function brush(next) {
+//     console.log("brush----");
+//     setTimeout(() => {
+//         next()
+//     }, 1000);
+    
+// } 
+// function bath(next) {
+//     console.log("bath----");
+//     setTimeout(() => {
+//         next()
+//     }, 1000);
+    
+// } 
+// function breakfast(next) {
+//     console.log("breakfast----");
+//     setTimeout(() => {
+//         next()
+//     }, 1000);
+    
+// } 
+// function goToSchool(next) {
+//     console.log("goToSchool----");
+//     setTimeout(() => {
+//         next()
+//     }, 1000);
+    
+// } 
+
+// alarm(function () {
+//     weakUp(function () {
+//         brush(function () {
+//             bath(function () {
+//                 breakfast(function () {
+//                     goToSchool(function () {
+//                         console.log("study properly");
+                        
+//                     })
+//                 })
+//             })
+//         })
+//     })
+// })
+//! level-5
+//  10 + 8 = 18
+// 20 - 5 = 15
+// 6 × 7 = 42
+// 15 ÷ 3 = 5
+// Error: Cannot divide by zero!
+
+function add(a,b,next) {
+    console.log(`${a} + ${b}`);
     let result=a+b
-    cb(null,result);
-    
+    next(null,result)
 }
-function sub(a,b,cb) {
+function subtract(a,b,next) {
+    console.log(`${a} - ${b}`);
     let result=a-b
-    cb(null,result);
-    
+    next(null,result)
 }
-function mult(a,b,cb) {
+function multiply(a,b,next) {
+    console.log(`${a} * ${b}`);
     let result=a*b
-    cb(null,result);
-    
+    next(null,result)
 }
-function div(a,b) {
+function divide(a,b,next) {
+    console.log(`${a} / ${b}`);
+    
     if (b==0) {
-        return "0 is not allowd"
+    err='cannot devid by zer'
+    next(err,null)
+    return 
     }
     let result=a/b
-    console.log(result);
-    
-    
+    next(null,result)
 }
-add(1,2,function () {
-    sub(1,2,function () {
-        mult(1,2,function () {
-            div(1,0)
-        })
+add(10, 8, function(err, res) {
+    if (err) console.log("Error:", err);
+    else console.log("10 + 8 =", res);
+
+    subtract(20, 5, function(err, res) {
+        if (err) console.log("Error:", err);
+        else console.log("20 - 5 =", res);
+
+        multiply(6, 7, function(err, res) {
+            if (err) console.log("Error:", err);
+            else console.log("6 × 7 =", res);
+
+                divide(10, 0, function(err, res) {
+                    if (err) console.log("Error:", err);
+                    else console.log("10 ÷ 0 =", res);
+                });
+            });
+        });
+    });
+
+console.warn("new peyiramid is comming ")
+add(10,20,function (err,res) {
+    if (err) {
+        console.log(err);
+        
+    } else {
+        console.log(res);
+        
+    }
+    add(30,40,function (err,res) {
+        if (err) {
+        console.log(err);
+        
+    } else {
+        console.log(res);
+        
+    }
+    divide(10,20,function (err,res) {
+        if (err) {
+        console.log(err);
+        
+    } else {
+        console.log(res);
+        
+    }
+    divide(10,0,function (err,res) {
+        if (err) {
+        console.log(err);
+        
+    } else {
+        console.log(res);
+        
+    }
+    })
+    })
     })
 })
