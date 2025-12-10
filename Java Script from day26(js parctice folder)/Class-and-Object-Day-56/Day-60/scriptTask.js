@@ -37,4 +37,28 @@
 // })
 //! task 3
 
-
+function loginuser(cb) {
+    console.log("user login methode ");
+    setTimeout(() => {
+        
+    cb({userName:"ritam",age:21,id:2})
+    }, 1000);
+}
+function fetchPermissions(userId,cb) {
+    console.log("this is fetchPermissions",userId);
+    arr=["h","w","KeyboardEvent"]
+    setTimeout(() => {
+    
+        cb(arr)
+    }, 1000);
+    
+}
+loginuser(function (obj) {
+    
+    fetchPermissions(obj.id,function (arr) {
+        console.log("loasing dash borae");
+        console.log(arr);
+        
+        
+    })
+})
