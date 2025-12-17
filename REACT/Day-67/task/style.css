@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+}
+main .boxParent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+main .boxParent .box1 {
+  height: 100%;
+  width: 45%;
+  background-color: rgb(17, 51, 174);
+  font-size: 4rem;
+}
+main .boxParent .box2 {
+  height: 100%;
+  width: 45%;
+  background-color: green;
+  font-size: 4rem;
+}/*# sourceMappingURL=style.css.map */
