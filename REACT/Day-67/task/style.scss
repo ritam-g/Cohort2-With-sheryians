@@ -21,16 +21,48 @@ main{
     @include fullScreen();
     display: flex;
     justify-content: space-between;
+    nav{
+      position: absolute;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(128, 0, 0, 0.168);
+      height: 10%;
+      p{
+        font-size: 2rem;
+        
+      }
+    }
     .box1{
     height: 100%;
     width: 45%;
-    background-color: rgb(17, 51, 174);
-    font-size: 4rem;
+    background-color: rgb(236, 239, 249);
+    font-size: 2rem;
+    position: relative;
+    .h1{
+      position: absolute;
+      top: 40%;
+      left: 10%;
+      font-size: 9rem;
+    }
+    p{
+      position: absolute;
+      top: 60%;
+      left: 10%;
+      
+      
+    }
   }.box2{
     height: 100%;
     width: 45%;
-    background-color: green;
+    
     font-size: 4rem;
+    background-image: url(https://react-proj01-c67-sheryians.vercel.app/model0-r0.png);
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
   }}
   
 }
