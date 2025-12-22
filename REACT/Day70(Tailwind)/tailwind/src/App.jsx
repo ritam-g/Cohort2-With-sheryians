@@ -1,9 +1,13 @@
 import React from "react";
+import Button from "./Button";
 
 function App() {
+  let arr=["clickme1 ","clickme2 ","clickme3 "]
   return (
-    <div className="bg-red-500 h-[20rem] w-[20rem] p-12 border-black border-8 flex items-center justify-center m-[1rem]">
-      <h1 className="text-4xl">hello</h1>
+    <div className="h-screen w-full bg-gray-700 text-2xl text-white flex gap-2">
+      {arr.map(ele=>{
+        return <Button data={ele}/>
+      })}
     </div>
   );
 }
