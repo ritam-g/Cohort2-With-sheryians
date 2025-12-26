@@ -4,7 +4,7 @@ function Right({ data }) {
   return (
     <div className="right w-[50%] h-[80%] flex items-center justify-center p-6">
       <div className='h-full w-[90%] bg-gray-900/50 border border-gray-800 rounded-3xl flex flex-col p-4 gap-3 overflow-y-auto'>
-        <h2 className="text-white font-bold mb-2">Submitted List</h2>
+        <h2 className="text-white font-bold mb-2 w-full  ">Submitted List</h2>
         
         {data.map((user, index) => (
           <div key={index} className='userDetails w-full bg-gray-800 border border-gray-700 flex items-center justify-between px-4 py-3 rounded-2xl'>
