@@ -1,33 +1,34 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
+import Left from './components/Left';
+import Right from './components/Right';
 
 function App() {
-  const [userInput, setuserInput] = useState('');
-  function onSubmitt(e) {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [allData, setAllData] = useState([]);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(userInput);
-  
-  }
+    if (name.trim() && email.trim()) {
+      setAllData([...allData, { name, email }]);
+      setName(''); // Clear form after submit
+      setEmail('');
+    }
+  };
+
   return (
-    <div  className='h-screen w-screen bg-gray-700 text-white flex gap-3 items-center justify-center '>
-      <form
-       onSubmit={function (e) {
-          onSubmitt(e)
-        }
-      }
-      >
-        <input
-        onChange={function (e) {
-          setuserInput(e.target.value)
-            }
-          }
-         
-         value={userInput}
-         type="text" placeholder='enter your name'
-         />
-        <input type="submit" value="submit"  className='p-2 border-2'/>
-      </form>
+    <div className='main h-screen w-screen bg-gray-700 flex items-center justify-center p-8 gap-6'>
+      {/* Pass state and setters as props for Two-Way Binding */}
+      <Left 
+        name={name} 
+        setName={setName} 
+        email={email} 
+        setEmail={setEmail} 
+        handleFormSubmit={handleSubmit}
+      />
+      <Right data={allData}/>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
