@@ -8,13 +8,22 @@ function App() {
   const [allData, setAllData] = useState([]);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (name.trim() && email.trim()) {
-      setAllData([...allData, { name, email }]);
+       e.preventDefault();
+       let newData=[...allData,{name,email}]
+      setAllData(newData)  //! it async funciton  
+      console.log(newData);
+      
       setName(''); // Clear form after submit
       setEmail('');
-    }
+    
   };
+  function rmovePerson(id) {
+    let cpyData=[...allData]
+    cpyData.splice(id,1)
+    setAllData(cpyData)
+    console.log(cpyData);
+    
+  }
 
   return (
     <div className='main h-screen w-screen bg-gray-700 flex items-center justify-center p-8 gap-6'>
@@ -26,7 +35,7 @@ function App() {
         setEmail={setEmail} 
         handleFormSubmit={handleSubmit}
       />
-      <Right data={allData}/>
+      <Right rmovePerson={rmovePerson} data={allData}/>
     </div>
   );
 }
