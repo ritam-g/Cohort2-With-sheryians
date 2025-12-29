@@ -5,20 +5,23 @@ import Right from './components/Right';
 function App() {
   const [name, setname] = useState('');
   const [email, setemail] = useState('');
-  const [allData, setallData] = useState([]);
+  
+  let oldData = JSON.parse(localStorage.getItem('all-Data'))||[]
+  const [allData, setallData] = useState(oldData);
   function submitClick(e) {
     e.preventDefault();
-    let oldData = [...allData]
     oldData.push({ name, email })
     setallData(oldData)//! this async function 
     //! now we have to store the data in localStorage
     localStorage.setItem("all-Data", JSON.stringify(oldData)) //! we moving old dta becuse the setall data funciton
     // ! is asynce may be its not sotre in that time beacuse its in heap memory so we have to pass old data its 
     // !in stacke so it will give current data 
+    setname('')
+    setemail('')
   }
   function rmovePerson(params) {
     //! i have to remove person
-    let oldData=[...allData]
+    
     oldData.splice(params,1)
     setallData(oldData)
     localStorage.setItem("all-Data", JSON.stringify(oldData))
@@ -33,7 +36,7 @@ function App() {
         setEmail={setemail}
         handleFormSubmit={submitClick}
       />
-      <Right rmovePerson={rmovePerson} data={JSON.parse(localStorage.getItem("all-Data"))}/>
+      <Right rmovePerson={rmovePerson} data={oldData}/>
     </div>
   );
 }
