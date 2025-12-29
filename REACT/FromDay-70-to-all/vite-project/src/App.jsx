@@ -12,7 +12,7 @@ function App() {
        let newData=[...allData,{name,email}]
       setAllData(newData)  //! it async funciton  
       console.log(newData);
-      
+      //! NOW WE HAVE TO STORE DATA IN LOCAL STORAGE 
       setName(''); // Clear form after submit
       setEmail('');
     
