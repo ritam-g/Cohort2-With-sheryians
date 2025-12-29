@@ -3,39 +3,37 @@ import Left from './components/Left';
 import Right from './components/Right';
 
 function App() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [allData, setAllData] = useState([]);
-
-  const handleSubmit = (e) => {
-       e.preventDefault();
-       let newData=[...allData,{name,email}]
-      setAllData(newData)  //! it async funciton  
-      console.log(newData);
-      //! NOW WE HAVE TO STORE DATA IN LOCAL STORAGE 
-      setName(''); // Clear form after submit
-      setEmail('');
-    
-  };
-  function rmovePerson(id) {
-    let cpyData=[...allData]
-    cpyData.splice(id,1)
-    setAllData(cpyData)
-    console.log(cpyData);
-    
+  const [name, setname] = useState('');
+  const [email, setemail] = useState('');
+  const [allData, setallData] = useState([]);
+  function submitClick(e) {
+    e.preventDefault();
+    let oldData = [...allData]
+    oldData.push({ name, email })
+    setallData(oldData)//! this async function 
+    //! now we have to store the data in localStorage
+    localStorage.setItem("all-Data", JSON.stringify(oldData)) //! we moving old dta becuse the setall data funciton
+    // ! is asynce may be its not sotre in that time beacuse its in heap memory so we have to pass old data its 
+    // !in stacke so it will give current data 
   }
-
+  function rmovePerson(params) {
+    //! i have to remove person
+    let oldData=[...allData]
+    oldData.splice(params,1)
+    setallData(oldData)
+    localStorage.setItem("all-Data", JSON.stringify(oldData))
+  }
   return (
     <div className='main h-screen w-screen bg-gray-700 flex items-center justify-center p-8 gap-6'>
       {/* Pass state and setters as props for Two-Way Binding */}
-      <Left 
-        name={name} 
-        setName={setName} 
-        email={email} 
-        setEmail={setEmail} 
-        handleFormSubmit={handleSubmit}
+      <Left
+        name={name}
+        setName={setname}
+        email={email}
+        setEmail={setemail}
+        handleFormSubmit={submitClick}
       />
-      <Right rmovePerson={rmovePerson} data={allData}/>
+      <Right rmovePerson={rmovePerson} data={JSON.parse(localStorage.getItem("all-Data"))}/>
     </div>
   );
 }
