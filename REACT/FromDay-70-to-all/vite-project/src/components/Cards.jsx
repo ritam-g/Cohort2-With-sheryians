@@ -6,7 +6,9 @@ function Cards({data}) {
     <div className=' Cards  w-full flex flex-wrap gap-[1rem] text-cyan-200 justify-evenly'>
      {
         data.map((ele,idx)=>{
-            return <Card data={ele} key={idx}/>
+            
+            
+            return <Card id={ele.id} author={ele.author} key={idx}/>
         })
      }
     </div>

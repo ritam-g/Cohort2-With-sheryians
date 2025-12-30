@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Card(props) {
+function Card({id,author}) {
     let r1=Math.floor(Math.random()*256)
     let r2=Math.floor(Math.random()*256)
     let r3=Math.floor(Math.random()*256)
@@ -8,9 +8,9 @@ function Card(props) {
     
   return (
     <div style={{ backgroundColor: `rgb(${r1}, ${r2}, ${r3})` }}
-     className='Card w-[15rem] h-[15rem] bg-blue-700 text-4xl flex flex-col items-center justify-evenly'>
-      <h1>{props.data.id}</h1>
-      <h2>{props.data.author}</h2>
+     className='Card w-[15rem] h-[15rem] bg-blue-700 text-4xl flex flex-col items-center-safe justify-center rounded-full'>
+      <h1>{id}</h1>
+      <h2>{author}</h2>
     </div>
   )
 }
