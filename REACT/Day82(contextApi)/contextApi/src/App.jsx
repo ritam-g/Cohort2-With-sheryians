@@ -1,13 +1,25 @@
 import React from 'react'
-import Hero from './components/Hero'
-
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Login from './pages/Login'
+import Profile from './pages/Profile'
+import Navbar from './components/Navbar'
 function App() {
-  console.log("app");
-  
   return (
-    <div className='bg-gray-700 w-screen h-screen text-violet-600 text-7xl'> 
-      <Hero/>
-    </div>
+    <>
+    <main className='w-full h-screen  p-2 capitalize '>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+      </Routes>
+    </main>
+    </>
   )
 }
 
