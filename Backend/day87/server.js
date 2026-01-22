@@ -13,12 +13,12 @@ app.post('/notes',(req,res)=>{
     //! user data always will be in req.body
     const  userData=req.body
     res.send("notes added")
-    console.log(userData);
     DB.push(userData)
+    console.log('/notes in post ');
+    
 }) 
 app.get('/notes',(req,res)=>{
     res.send(DB)
-    console.log(DB);
     
 })
 
