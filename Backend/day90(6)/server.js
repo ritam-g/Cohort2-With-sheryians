@@ -3,14 +3,14 @@ const mongoose = require("mongoose");
 const app = require("./src/app");
 
 function connectServer() {
-  mongoose
+    mongoose
     .connect(process.env.MONGO_URI)
-    .then(() => {
-      console.log("✅ MongoDB connected (day-6 DB)");
+    .then(()=>{
+        console.log('server is succesfull conected with our db');
+        
     })
-    .catch((err) => {
-      console.error("❌ DB connection error:", err.message);
-    });
+    .catch(err=>console.log(`some error come ${err}`)
+    )
 }
 
 // start server
