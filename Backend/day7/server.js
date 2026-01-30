@@ -1,7 +1,9 @@
+const  mongoose = require("mongoose");
 const app = require("./src/app");
-require("dotenv").config();
-const connectDB = require('./src/config/database');
+const connectDB = require("./src/config/databse");
+require('dotenv').config()
+
 app.listen(3000,()=>{
-    console.log('server is ruunning ');
+    console.log('server is running ');
     connectDB()
 })
