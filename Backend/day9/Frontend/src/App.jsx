@@ -83,7 +83,7 @@ function App() {
 
             {/* EDIT FORM */}
             {/* //!  editId === _id this chekc is for is the edit id is same with 
-            //! same note id if yes then show only the   */}
+            //! same note id if yes then show only the same note not other   */}
             {editId === _id && (
               <form
                 className="edit-form"
