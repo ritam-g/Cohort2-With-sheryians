@@ -1,9 +1,13 @@
 const express = require("express");
 const noteModel = require("./models/note.model");
 const cors = require('cors');
+const path = require('path');
+
+//! ALL MIDDLEWARE 
 const app=express()
 app.use(express.json())
 app.use(cors())
+app.use(express.static("./public"))//! i have little bit of coniusion on this  
 
 //* USER WILL GET DATA   //NOTE - find 
 app.get('/api/note',async(req,res)=>{
@@ -54,6 +58,17 @@ app.delete('/api/note/:id',async(req,res)=>{
     })
 }) 
 
+
+//* UNIVERSAL ROUTE WILL BE HERE which i use to for app.use  
+app.use('*name',(req,res)=>{
+    //! IF THER IS ANY UNKNOW ROUTE SO IT WILL SHOW THSI INDX.HTML FILE ROUTE 
+    //! BUT ITS NOT GOOD OF DING FULL FILE OF THE YOUR SYSTEM 
+    //! FOR THAT WE HAVE  
+    console.log(__dirname);
+      
+    res.sendFile(path.join(__dirname,'..','\\public\\index.html'))
+    
+})
 
 
 module.exports=app
