@@ -1,14 +1,16 @@
 const express = require("express");
 const noteModel = require("./models/note.model");
 const cors = require('cors');
-const path = require('path');
+const path = require('path');//! for thi smodule we will get the __dirname ther will be locaiotn of app.js where its located 
+
 
 //! ALL MIDDLEWARE 
 const app=express()
 app.use(express.json())
 app.use(cors())
-app.use(express.static("./public"))//! i have little bit of coniusion on this  
-
+//! static file is checking any requrestis is this exiest in the puclic foler so 
+//! it will directly wwhow that  
+app.use(express.static("./public"))
 //* USER WILL GET DATA   //NOTE - find 
 app.get('/api/note',async(req,res)=>{
    const notes= await noteModel.find()
@@ -65,7 +67,7 @@ app.use('*name',(req,res)=>{
     //! BUT ITS NOT GOOD OF DING FULL FILE OF THE YOUR SYSTEM 
     //! FOR THAT WE HAVE  
     console.log(__dirname);
-      
+      //__dirname is the locaiton of till backend to src file 
     res.sendFile(path.join(__dirname,'..','\\public\\index.html'))
     
 })
