@@ -4,12 +4,13 @@
 
 const express = require("express");
 const userModel = require("../models/user.model");
+const jwt = require("jsonwebtoken");//! for digital sign with token  
 
 const authRouter=express.Router()
 
 authRouter.post('/register',async(req,res)=>{
     const{email,name,pass}=req.body
-    
+
     //! before creating we need to check is or email is already exiest ot not 
    let check= await userModel.findOne({email}) 
    if (check) {
@@ -21,9 +22,13 @@ authRouter.post('/register',async(req,res)=>{
     let user = await userModel.create({
         name,email,pass
     })
+   const token= jwt.sign(
+        {id:user._id,email:user.email},
+        process.env.JADUKEY
+    )
     res.status(201).json({
         message:'user is created ',
-        user
+        user,token
     })
     console.log('hit');
     
