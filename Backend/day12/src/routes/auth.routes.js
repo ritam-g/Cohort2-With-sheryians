@@ -26,6 +26,8 @@ authRouter.post('/register',async(req,res)=>{
         {id:user._id,email:user.email},
         process.env.JADUKEY
     )
+    //! set cookie wehn user will cfeate new user  
+    res.cookie('jwt_cokie',token)
     res.status(201).json({
         message:'user is created ',
         user,token
