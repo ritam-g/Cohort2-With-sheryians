@@ -35,4 +35,15 @@ authRouter.post('/register',async(req,res)=>{
     console.log('hit');
     
 })
+
+authRouter.post('/login',async(req,res)=>{
+    const {email,pass}=req.body
+    let find=await userModel.findOne({email})
+    if(!find)return res.status(400).json({
+        message:'user not find '
+    })
+    res.status(200).json({
+        message:'user found sucessfully'
+    })
+})
 module.exports=authRouter
