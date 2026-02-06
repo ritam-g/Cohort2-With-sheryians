@@ -32,13 +32,14 @@ authRouter.post('/register',async(req,res)=>{
         message:'user is created ',
         user,token
     })
-    console.log('hit');
+    // console.log('hit');
     
 })
 
 authRouter.post('/login',async(req,res)=>{
     const {email,pass}=req.body
     let find=await userModel.findOne({email})
+    
     if(!find)return res.status(400).json({
         message:'user not find '
     })
