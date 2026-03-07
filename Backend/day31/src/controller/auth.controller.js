@@ -5,11 +5,9 @@ async function registerController(req,res,next) {
     //we want json 
 
     try {
-        let user=null
-        if(!user){
-            throw new Error("null somign chek ");
-            
-        }
+        return res.status(200).json({
+            message:'sucess'
+        })
     } catch (error) {
         error.status=401
 
