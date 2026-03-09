@@ -10,6 +10,9 @@ io.on("connection",(socket)=>{
     console.log('server is connected');
     socket.on("message",(message)=>{
         console.log('user make message')
+        console.log(message);
+        io.emit("two connect",message)
+        
     })
     
 })
