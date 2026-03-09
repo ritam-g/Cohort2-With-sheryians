@@ -6,11 +6,15 @@ const httpServer = createServer(app);
 const io = new Server(httpServer, { /* options */ });
 
 
-io.on("connection", (socket) => {
-    console.log('conntecitn is establishied')
-});
+io.on("connection",(socket)=>{
+    console.log('server is connected');
+    socket.on("message",(message)=>{
+        console.log('user make message')
+    })
+    
+})
 
-httpServer.listen(3000, () => {
+httpServer.listen(4000, () => {
     console.log('socket server is runnin g');
 
 });
