@@ -9,13 +9,22 @@ import { MistralAIEmbeddings } from "@langchain/mistralai";
 import "dotenv/config";
 // ! for vector store
 import { Pinecone } from '@pinecone-database/pinecone';
-import { json } from 'node:stream/consumers';
+
 
 const pc = new Pinecone({
     apiKey: process.env.RAG_TESTING,
 });
 // the indes parameters will be the name of the index in pinecone
 const index = pc.index('cohort-2-testing');
+
+
+// now talk with ai 
+import { ChatMistralAI } from "@langchain/mistralai";
+
+const model = new ChatMistralAI({
+model: "mistral-small-latest",
+temperature: 0
+});
 //! steps 
 // 1. pdf to text 
 // 2. text to chunks 
@@ -93,7 +102,7 @@ if (!chunks || chunks.length === 0) {
 //     }))
 // })
 
-
+const query="how the arav intership"
 // what ever user qusery we are doing again embadding 
 const embaddedQuery = await embeddings.embedQuery("how the arav intership")
 console.log(embaddedQuery);
@@ -108,3 +117,26 @@ const response=await index.query({
 })
 // now we can fetch data from pincone and for reading the data we do this
 console.log((JSON.stringify(response)));
+
+// it will return only text whihc are match in the index
+const context = response.matches
+    .map(match => match.metadata.text)
+    .join("\n");
+
+
+// pormpt for ai 
+const prompt = `
+Answer the question based only on the context below.
+
+Context:
+${context}
+
+Question:
+${query}
+`;
+
+
+//! less teken we burn eficcent anser etc we have done  
+const aiResponse = await model.invoke(prompt);
+console.log(aiResponse.content);
+
