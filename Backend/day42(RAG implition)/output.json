@@ -1,0 +1,32 @@
+{
+    "matches": [
+        {
+            "id": "doc-7",
+            "score": 0.703615904,
+            "values": [],
+            "metadata": {
+                "text": "In his final semester, Aarav got a 3-month internship at a small software company."
+            }
+        },
+        {
+            "id": "chunk-7",
+            "score": 0.703507245,
+            "values": [],
+            "metadata": {
+                "text": "In his final semester, Aarav got a 3-month internship at a small software company."
+            }
+        },
+        {
+            "id": "doc-10",
+            "score": 0.679734528,
+            "values": [],
+            "metadata": {
+                "text": "During the internship:\n• Aarav struggled to understand an existing codebase"
+            }
+        }
+    ],
+    "namespace": "__default__",
+    "usage": {
+        "readUnits": 1
+    }
+}
