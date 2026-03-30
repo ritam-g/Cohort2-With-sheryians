@@ -1,19 +1,36 @@
-import React from 'react'
+import React from 'react';
 
 function Card({ details }) {
     return (
-        <main>
-            {details.map((detail,index)=>{
-                return(
-                    <div key={index} style={{border:"1px solid black", margin:"10px", padding:"10px"}}>
-                        <h2>{detail.name}</h2>
-                        <p>Age: {detail.age}</p>
-                        <p>Occupation: {detail.occupation}</p>
+
+        <main className="container">
+            {details.map((item, index) => (
+                <div key={index} className="card">
+                    <div className="image-container">
+                        <img src={item.image} alt={item.name} />
                     </div>
-                )
-            })}
+                    <div className="content">
+                        <span className="location-tag">{item.location}</span>
+                        <h2>{item.name}</h2>
+                        <p className="occupation">{item.occupation}</p>
+
+                        <div className="stats">
+                            <div className="stat-box">
+                                <span className="label">Age</span>
+                                <span className="value">{item.age}</span>
+                            </div>
+                            <div className="stat-box">
+                                <span className="label">Status</span>
+                                <span className="value">Active</span>
+                            </div>
+                        </div>
+
+                        <button className="btn">View Profile</button>
+                    </div>
+                </div>
+            ))}
         </main>
-    )
+    );
 }
 
-export default Card
+export default Card;
