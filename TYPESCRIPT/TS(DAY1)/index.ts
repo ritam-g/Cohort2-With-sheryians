@@ -1,47 +1,45 @@
-// array 
+// any && unknown
+
+//! any   we can assign any type to a variable
+//! but we lose type safety and intellisense support
+let a:any;
+// a = 10;
+// console.log(a);
+
+// a = "Hello";
+// console.log(a.toUpperCase());
+
+// a = true;
+// console.log(a);
+
+// a = [1, 2, 3];
+// console.log(a);
+
+// a = { name: "Alice", age: 30 };
+// console.log(a);
 
 
-// const arr:number[] = [1,2,3,4,5]
+// ! unknown   we can assign any type to a variable
+//! but we need to perform type checking before using it
 
-// arr.push(6)
-// console.log(arr)
+let b:unknown
 
-// arr.pop()
-// console.log(arr)
+// b=10
+// if(typeof b==="number"){
+//     console.log(b.toFixed(2));
+// }
 
-// arr.unshift(0)
-// console.log(arr)
+// b="Hello"
+// if(typeof b==="string"){
+//     console.log(b.toUpperCase());
+// }
 
-// arr.shift()
-// console.log(arr)
+// b=true
+// if(typeof b==="boolean"){
+//     console.log(b);
+// }
 
-
-// tuple its a fixed length array with different types of data
-
-// const tuple:[number,string,boolean]=[1,"hello",true]
-
-// console.log(tuple)
-
-// const tl:[string,number]=["?",10]
-// console.log(tl)
-
-
-// funciton practice
-
-type user={name:string,age:number}
-
-// structure of the funtion 
-//NOTE : void means the function does not return anything
-// function call(details:user):void {}
-// details is the parameter of the function and its type is user which we defined above
-function call(details:user):void {
-    console.log(`my name is ${details.name} and my age is ${details.age}`)
-}
-
-type student={name:string,age:number,grade:string}
-function call2({name,age,grade}:student):number {
-    console.log(`my name is ${name}, age is ${age}, and grade is ${grade}`)
-    return age;
-}
-call({name:"king",age:22})
-console.log(call2({name:"king",age:22,grade:"A"}))
+// b=[1,2,3]
+// if(Array.isArray(b)){
+//     console.log(b.join(","));
+// }
