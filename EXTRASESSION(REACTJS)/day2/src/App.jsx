@@ -33,33 +33,17 @@ function App() {
   ])
   function handleLike(id) {
     setuser((prevUsers) => {
-      return prevUsers.map(user => {
-        if (user.id === id) {
-          if (user.like < 5) {
-            return { ...user, like: user.like + 1 }
-          } else {
-            return user
-          }
-        } else {
-          return user
-        }
-      })
+      return prevUsers.map(user => 
+        user.id===id && user.like>=0 && user.like<5 ? {...user, like: user.like + 1} : user
+      )
     })
   }
   function handleDislike(id) {
     setuser((prevUsers) => {
-      return prevUsers.map(user => {
-        if (user.id === id) {
-          if (user.dislike >= 0 && user.dislike < 5) {
-            return { ...user, dislike: user.dislike + 1 }
-          } else {
-            return { ...user, dislike: user.dislike }
-          }
-        } else {
-          return user
-
-        }
-      })
+      return prevUsers.map(user => 
+        
+        user.id===id && user.dislike>=0 && user.dislike<5 ? {...user,dislike:user.dislike +1} : user
+      )
     })
   }
   return (
