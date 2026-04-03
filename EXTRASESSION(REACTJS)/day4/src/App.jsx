@@ -12,8 +12,8 @@ function App() {
     if (storedData) {
       setformData(JSON.parse(storedData));
     }
-    console.log('store data',JSON.stringify(storedData));
-    
+    console.log('store data', JSON.stringify(storedData));
+
   }, [])
 
   // ✅ Save data whenever formData changes
@@ -33,13 +33,20 @@ function App() {
     // setname('');
     // setemail('');
   }
-function  delteUser(key) {
-  console.log(key);
-  
-  setformData(prev=>(
-    prev.filter((_,index)=>index!==key)
-  ))
-}
+  function delteUser(key) {
+    console.log(key);
+
+    setformData(prev => (
+      prev.filter((_, index) => index !== key)
+    ))
+  }
+  function editUser(key, name, email) {
+    setformData(prev => (
+      prev.map((data, index) => (
+        index == key ? { ...data, name, email } : data
+      ))
+    ))
+  }
   return (
     <main className='w-full h-screen bg-gray-700 flex flex-col items-center justify-center'>
 
@@ -66,10 +73,12 @@ function  delteUser(key) {
         {
           formData.map((data, index) => (
             // key should be unique and stable, using index can cause issues if items are added/removed
-            <Card delteUser={delteUser} index={index} name={data.name} email={data.email} />
+            <Card editUser={editUser} delteUser={delteUser} index={index} name={data.name} email={data.email} />
           ))
         }
       </div>
+
+      
 
     </main>
   )
