@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react'
 
 const App = () => {
-  const nameRef = useRef()
-  const emailRef = useRef()
+  const formRef = useRef()
   const [form, setForm] = useState([])
 
   const handleSubmit = (e) => {
@@ -11,17 +10,17 @@ const App = () => {
     setForm([
       ...form,
       {
-        name: nameRef.current.value,
-        email: emailRef.current.value
+        name: formRef.current.name.value,
+        email: formRef.current.email.value
       }
     ])
   }
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input ref={nameRef} type="text" placeholder="enter your name" />
-        <input ref={emailRef} type="email" placeholder="enter your email" />
+      <form ref={formRef} onSubmit={handleSubmit}>
+        <input  type="text" name="name" placeholder="enter your name" />
+        <input type="email" name="email" placeholder="enter your email" />
         <button type="submit">submit</button>
       </form>
 
