@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <main class="flex flex-col justify-center items-center gap-2 bg-red-600 h-[100vh]">
+        <h1 class="h-4 font-bold text-center">USER NAME <%= userName %></h1>
+        <img class="bg-red-500 mx-auto rounded-3xl w-[50%] h-[40rem]" src="<%= link %>" alt="">
+        <p class="mt-10 h-4 font-bold text-center"><%= purpose %></p>
+        <ol>
+          <% let age=20 %>
+          <% if(age>=18){ %>
+          <li>You are eligible for voting</li>
+          <% }else{ %>
+          <li>You are not eligible for voting</li>
+          <% } %>
+        </ol>
+    </main>
+</body>
+</html>

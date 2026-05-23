@@ -30,6 +30,7 @@ const connectToMongo = async () => {
 const app = express()
 app.use(express.json())
 app.use(morgan('dev'))
+
 /**  
  * if user data is present in redis cache, return it from there
  * if not present in redis cache, fetch it from MongoDB, store it in redis cache and return the response
